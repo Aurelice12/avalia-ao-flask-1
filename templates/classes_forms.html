@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h2>{{ title }}</h2>
+    <form method="post" action="{{ url_for('cadastrar_classe') }}">
+      <label for="nome"
+        >nome da classe
+        <input
+          type="text"
+          name="nome"
+          placeholder="ex: Mago, Bruxo"
+          value="{{ classe.nome}}"
+          required
+        />
+      </label>
+      <label for="atr_conjuração"
+        >atributo de conjuração
+        <input
+          type="text"
+          name="atr_conjuração"
+          placeholder="ex: intligencia, carisma"
+          value="{{ classe.atr_conjuração}}"
+          required
+        />
+      </label>
+      <button type="submit">Salvar</button>
+    </form>
+  </body>
+</html>

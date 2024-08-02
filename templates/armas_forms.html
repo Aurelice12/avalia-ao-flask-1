@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h2>{{ title }}</h2>
+    <form method="post">
+      <label for="nome"
+        >nome da arma
+        <input
+          type="text"
+          name="nome"
+          placeholder="ex: espada longa, besta de mão"
+          value="{{ arma.nome}}"
+          required
+        />
+      </label>
+      <label for="tipo"
+        >tipo da arma
+        <input
+          type="text"
+          name="tipo"
+          placeholder="ex: versatil, duas mãos"
+          value="{{ arma.tipo}}"
+          required
+        />
+      </label>
+      <label for="propriedade"
+        >propriedades da arma
+        <input
+          type="text"
+          name="propriedade"
+          placeholder="ex: cortante, contundente"
+          value="{{ arma.propriedade}}"
+          required
+        />
+      </label>
+
+      <button type="submit">Salvar</button>
+    </form>
+  </body>
+</html>

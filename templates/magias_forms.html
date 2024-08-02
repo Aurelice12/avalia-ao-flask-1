@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h2>{{ title }}</h2>
+    <form method="post">
+      <label for="nome"
+        >nome da magia
+        <input
+          type="text"
+          name="nome"
+          placeholder="ex: bola de fogo, soar os mortos"
+          value="{{ magia.nome}}"
+          required
+        />
+      </label>
+      <label for="nivel"
+        >nivel da maiga
+        <input
+          type="text"
+          name="nivel"
+          placeholder="ex: lvl 3, lvl 9"
+          value="{{ magia.nivel}}"
+          required
+        />
+      </label>
+      <label for="alcance"
+        >alcance da magia
+        <input
+          type="text"
+          name="alcance"
+          placeholder="ex: 10 metros, toque"
+          value="{{ magia.alcance}}"
+          required
+        />
+      </label>
+      <button type="submit">Salvar</button>
+    </form>
+  </body>
+</html>

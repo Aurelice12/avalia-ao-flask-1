@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h2>{{ title }}</h2>
+    <form method="post">
+      <label for="nome">
+        nome da armadura
+        <input
+          type="text"
+          name="nome"
+          placeholder="Ex: cota de malha"
+          value="{{ armadura.nome }}"
+          required
+        />
+      </label>
+      <label for="defesa">
+        defesa da armadura
+        <input
+          type="text"
+          name="defesa"
+          placeholder="defesa em CA"
+          value="{{ armadura.defesa }}"
+          required
+        />
+      </label>
+      <label for="tipo">
+        Mínimo de jogadores
+        <input
+          type="text"
+          name="tipo"
+          placeholder="tipo da armadura"
+          value="{{ armadura.tipo }}"
+          required
+        />
+      </label>
+      <button type="submit">Salvar</button>
+    </form>
+  </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h2>inventario de armas</h2>
+    <a href="{{ url_for('cadastrar_arma') }}">Adicionar arma</a>
+    {% if armas.__len__()==0 %}
+    <p>nenhuma arma arquivada</p>
+    {% endif %}
+    <table border="1">
+      <thead>
+        <tr>
+          <th>nome</th>
+          <th>tipo</th>
+          <th>propriedade</th>
+          <th>Editar</th>
+          <th>Remover</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for arma in Armas %}
+        <tr>
+          <td>{{ arma.nome }}</td>
+          <td>{{ arma.tipo }}</td>
+          <td>{{ arma.propriedade }}</td>
+          <td>
+            <a href="{{ url_for('editar_arma', chave=arma.id)}}">Editar</a>
+          </td>
+          <td>
+            <a href="{{ url_for('apagar_arma', chave=arma.id)}}">Remover</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h4>Outras categorias:</h4>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('classes_list') }}">Início</a></li>
+        <li><a href="{{ url_for('armaduras_list') }}">Armaduras</a></li>
+        <li><a href="{{ url_for('armas_list') }}">Armas</a></li>
+        <li><a href="{{ url_for('magias_list') }}">Magias</a></li>
+      </ul>
+    </nav>
+    <footer>
+      <p>&copy; Orual's Team</p>
+    </footer>
+  </body>
+</html>

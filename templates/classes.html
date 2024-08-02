@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h2>Lista de classes</h2>
+    <a href="{{ url_for('cadastrar_classe') }}">Adicionar classe</a>
+    {% if classes|length == 0 %}
+    <p>nenhuma classe arquivada</p>
+    {% endif %}
+    <table border="1">
+      <thead>
+        <tr>
+          <th>nome</th>
+          <th>atr_conjuração</th>
+          <th>Editar</th>
+          <th>Remover</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for classe in Classes %}
+        <tr>
+          <td>{{ classe.nome }}</td>
+          <td>{{ classe.atr_conjuração }}</td>
+          <td>
+            <a href="{{ url_for('editar_classe', chave=classe.id) }}">Editar</a>
+          </td>
+          <td>
+            <a href="{{ url_for('apagar_classe', chave=classe.id) }}"
+              >Remover</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h4>Outras categorias:</h4>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('classes_list') }}">Início</a></li>
+        <li><a href="{{ url_for('armaduras_list') }}">Armaduras</a></li>
+        <li><a href="{{ url_for('armas_list') }}">Armas</a></li>
+        <li><a href="{{ url_for('magias_list') }}">Magias</a></li>
+      </ul>
+    </nav>
+    <footer>
+      <p>&copy; Orual's Team</p>
+    </footer>
+  </body>
+</html>
